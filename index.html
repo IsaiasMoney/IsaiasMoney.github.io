@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Isaias - Developer Portfolio</title>
+    <link rel="icon" href="assests/icon.png" class="rel" />
+    <link rel="stylesheet" href="style.css" class="rel" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      class="rel"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="namelogo">
+          <img src="assests/affan1.jpg" />
+          <div class="left">&nbsp;Isaias's Portfolio</div>
+        </div>
+        <div class="right">
+          <ul class="navbar-menu">
+            <li><a href="index.html">Home</a></li>
+            <li>
+              <a href="services.html">Services</a>
+            </li>
+            <li><a href="projects.html">Projects</a></li>
+            <!-- <li><a href="about.html">About</a></li> -->
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="navbar-toggle">
+          <button id="menu-toggle"><i class="fa-solid fa-list"></i></button>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <!-- Chatbot Button -->
+      <section id="chatbotContainer">
+        <div class="chatbot-icon" onclick="toggleChatbot()">💬</div>
+
+        <!-- Chatbot Container -->
+        <div class="chatbot-container">
+          <div class="chatbot-header">
+            Chatbot
+            <span class="close-btn" onclick="toggleChatbot()">×</span>
+          </div>
+          <div class="chatbot-messages" id="chatbotMessages">
+            <div class="bot-message">Hello! How can I help you? 😊</div>
+          </div>
+          <div class="chatbot-input">
+            <input
+              type="text"
+              id="userInput"
+              placeholder="Type a message..."
+              onkeypress="handleKeyPress(event)"
+            />
+            <button onclick="sendMessage()">➤</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="firstSection">
+        <div class="leftSection">
+          Hi, my name is <span class="purple">Isaias</span>
+          <div>and I am a Passionate</div>
+          <span id="element"></span>
+
+          <div class="buttons">
+            <button class="btn1">
+              <a href="assests/resume-IM-full stack.pdf" download
+                ><i class="fas fa-file-alt"></i> Resume</a
+              >
+            </button>
+            <button class="btn2">
+              <a href="https://github.com/IsaiasMoney"
+                ><i class="fab fa-github"></i> Github</a
+              >
+            </button>
+            <button class="btn3">
+              <a href="https://www.linkedin.com/in/"
+                ><i class="fab fa-linkedin"></i> Linkedin</a
+              >
+            </button>
+          </div>
+        </div>
+        <div class="rightSection">
+          <img src="assests/bg.png" alt="bg" />
+        </div>
+      </section>
+      <hr />
+
+      <!-- Skills -->
+      <section>
+        <div class="skills">
+          <h1 class="h1"><i class="ri-stack-fill"></i> Skills</h1>
+          <h2>🖥️ Programming Language</h2>
+          <hr id="skills-hr" />
+          <div class="web-skills">
+            <div class="card">
+              <a href="https://github.com/affancoder/C_language"
+                ><img src="assests/c.png" alt="Card Image"
+              /></a>
+              <h2>C Language</h2>
+              <p></p>
+            </div>
+
+            <div class="card">
+              <a href="https://github.com/affancoder/language.cpp"
+                ><img src="assests/c++.png" alt="Card Image"
+              /></a>
+              <h2>C++</h2>
+              <p></p>
+            </div>
+
+            <div class="card">
+              <a href="https://github.com/affancoder/Python_Codes"
+                ><img src="assests/python.png" alt="Card Image"
+              /></a>
+              <h2>PYTHON</h2>
+              <p></p>
+            </div>
+
+            <div class="card">
+              <a href="https://github.com/affancoder/Java_Codes"
+                ><img src="assests/java.png" alt="Card Image"
+              /></a>
+              <h2>JAVA</h2>
+              <p></p>
+            </div>
+          </div>
+          <h2>🎨 Frontend Development</h2>
+          <hr id="skills-hr" />
+          <div class="web-skills">
+            <div class="card">
+              <a href="https://github.com/affancoder/HTML-Practiced"
+                ><img src="assests/html.png" alt="Card Image"
+              /></a>
+              <h2>HTML</h2>
+              <p></p>
+            </div>
+            <div class="card">
+              <a href="https://github.com/affancoder/CSS_Practiced"
+                ><img src="assests/css.png" alt="Card Image"
+              /></a>
+              <h2>CSS</h2>
+              <p></p>
+            </div>
+            <div class="card">
+              <a href="https://github.com/affancoder/JavaScript"
+                ><img src="assests/javascript.png" alt="Card Image"
+              /></a>
+              <h2>JAVASCRIPT</h2>
+              <p></p>
+            </div>
+            <div class="card">
+              <a href="#"><img src="assests/react.png" alt="Card Image" /></a>
+              <h2>React JS</h2>
+              <p></p>
+            </div>
+          </div>
+          <h2>⚙️ Backend Development</h2>
+          <hr id="skills-hr" />
+          <div class="web-skills">
+            <div class="card">
+              <a href="#"><img src="assests/nodejs.png" alt="" /></a>
+              <h2>NODE JS</h2>
+              <p></p>
+            </div>
+            <div class="card">
+              <a href=""
+                ><img src="assests/express2.png" alt="" id="express"
+              /></a>
+              <h2>EXPRESS JS</h2>
+              <p></p>
+            </div>
+            <div class="card">
+              <a href=""><img src="assests/php.png" alt="" id="express" /></a>
+              <h2>PHP</h2>
+              <p></p>
+            </div>
+          </div>
+          <h2>🛢️ DataBase</h2>
+          <hr id="skills-hr" />
+          <div class="web-skills">
+            <div class="card">
+              <a href="https://github.com/affancoder/SQL"
+                ><img src="assests/sql.png" alt=""
+              /></a>
+              <h2>MYSQL</h2>
+              <p></p>
+            </div>
+            <div class="card">
+              <a href="https://github.com/affancoder/MongoDB"
+                ><img src="assests/mongodb.png" alt=""
+              /></a>
+              <h2>MONGODB</h2>
+              <p></p>
+            </div>
+            <div class="card">
+              <a href="https://github.com/affancoder/MongoDB"
+                ><img src="assests/firebase.png" alt=""
+              /></a>
+              <h2>FIREBASE</h2>
+              <p></p>
+            </div>
+          </div>
+          <h2>Frontend Framework</h2>
+          <hr id="skills-hr" />
+          <div class="web-skills">
+            <div class="card">
+              <a href="https://github.com/affancoder/Bootstrap_Practiced"
+                ><img src="assests/bootstrap.png" alt=""
+              /></a>
+              <h2>BOOTSTRAP</h2>
+              <p></p>
+            </div>
+            <div class="card">
+              <a href="https://github.com/affancoder/Bootstrap_Practiced"
+                ><img src="assests/laravel.png" alt=""
+              /></a>
+              <h2>LARAVEL</h2>
+              <p></p>
+            </div>
+            <div class="card">
+              <a href=""><img src="assests/tailwindcss.png" alt="" /></a>
+              <h2>TAILWINDCSS</h2>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <hr />
+
+      <!-- Experience -->
+
+      <section id="experience">
+        <div class="container">
+          <h2 class="section-title">
+            <i class="fa-solid fa-code"></i>&nbsp;Experience
+          </h2>
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-icon"></div>
+              <div class="timeline-content">
+                <h3 class="timeline-title">
+                  &nbsp;Full Stack Web Developer | Ecom Services HUB Pvt Ltd |
+                  Remote
+                </h3>
+                <p>&#x2022; March 2023 - April 2025</p>
+                <p>
+                  &#x2022; Currently contributing to the **GigsTM** job portal,
+                  where work is ongoing on building responsive UI, integrating
+                  dynamic job listings, optimizing backend performance, and
+                  enhancing overall user experience. 🚀<br /><br />
+                </p>
+
+                <p>
+                  &#x2022; I solely developed the full-stack **mern-project** website,
+                  an intuitive platform where users can proactively report hate
+                  incidents. It features robust authentication, a real-time
+                  dynamic dashboard for seamless monitoring, and an
+                  aesthetically responsive UI. Leveraging advanced technologies,
+                  I ensured data security, performance optimization,
+                  cross-browser compatibility, modular architecture, and
+                  scalable backend infrastructure for an impactful and
+                  user-centric experience. 🚀 🚀
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="btncontainer">
+            <a
+              href="https://github.com/IsaiasMoney/mern-project"
+              target="_blank"
+              class="btn-animated"
+              >Visit Repo</a
+            >
+          </div>
+
+          <hr />
+
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-icon"></div>
+              <div class="timeline-content">
+                <h3 class="timeline-title">
+                  &nbsp;Full Stack Web Developer Internship | Simtrak Solution
+                  Pvt Ltd | Remote
+                </h3>
+                <p>&#x2022; Feburary 2021 - January 2023</p>
+                <p>
+                  &#x2022; Develop responsive front-end components using
+                  Flexbox, Grid, media queries, mobile-first design, Tailwind
+                  CSS, GSAP animations, Bootstrap, CSS transitions, relative
+                  units, and real-device testing for smooth UI scaling and
+                  accessibility. 🚀<br /><br />
+                </p>
+
+                <p>
+                  &#x2022; I developed the **International Volunteer Management
+                  System (IVMS)**, creating all attractive and responsive web
+                  pages with GSAP animations. I integrated PHP-MySQL for
+                  volunteer registration, designed a discussion forum, added
+                  interactive action cards, linked all pages, and ensured
+                  seamless backend functionality using `connect.php` on the
+                  Apache server. 🚀
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="btncontainer">
+            <a
+              href="https://github.com/IsaiasMoney/Simtrak_Internship"
+              target="_blank"
+              class="btn-animated"
+              >Visit Repo</a
+            >
+          </div>
+        </div>
+      </section>
+
+      <!----- Hero Parallax Section ------>
+
+      <section>
+        <section class="parallax hero">
+          <div class="parallax-content">
+            <h1>Hi, I'm Isaias Money</h1>
+            <p>
+              I'm a passionate Full Stack Web Developer, skilled in building
+              responsive, modern, and scalable web applications. I focus on
+              writing clean, efficient code and delivering smooth, user-friendly
+              experiences. Always eager to learn, I keep up with the latest tech
+              to build high-quality and visually appealing solutions.
+            </p>
+          </div>
+        </section>
+
+        <!-- Contributions Section -->
+        <section class="parallax section contribution">
+          <div class="parallax-content">
+            <h2>My Contributions</h2>
+            <p>
+              As a proactive developer, I've contributed to several impactful
+              projects including:
+              <br /><br />
+              •
+              <strong>International Volunteer Management System (IVMS)</strong>:
+              Designed a smooth UI, implemented dynamic dashboards, and handled
+              backend data integration with PHP & MySQL.<br />
+              • <strong>Simtrak Solution</strong>: Developed beautiful and
+              responsive frontend components using React JS, optimized user
+              experience, and added interactive animations with GSAP.<br />
+              • <strong>WanderLust</strong>: Built a full-stack holiday rental
+              web app using MERN stack, featuring authentication, search
+              filters, and user-friendly booking flows.
+            </p>
+          </div>
+        </section>
+
+        <!-- Appreciation Section -->
+        <section class="parallax section appreciation">
+          <div class="parallax-content">
+            <h2>Appreciations</h2>
+            <p>
+              I'm humbled to receive continuous support and recognition from my
+              mentors and teams:
+              <br /><br />
+              • <strong>Simtrak Solution Pvt Ltd</strong>: Acknowledged for
+              delivering a professional dashboard UI, fast turnarounds, and
+              clean code implementation.<br />
+              • <strong>IVMS Team</strong>: Praised for creativity in front-end
+              styling, GSAP transitions, and dedication to teamwork.<br />
+              • <strong>College Faculty & Peers</strong>: Commended for my
+              self-initiative in learning full-stack development beyond the
+              curriculum.
+            </p>
+          </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section class="parallax section achievement">
+          <div class="parallax-content">
+            <h2>Achievements</h2>
+            <p>
+              • Successfully completed a Web Developer Internship at Simtrak
+              Solution Pvt Ltd.<br />
+              • Developed and deployed 5+ full-stack projects using technologies
+              like React, Node.js, MongoDB, Express, PHP, MySQL, and more.<br />
+              • Independently learned Java, Python, and Data Structures to
+              strengthen my problem-solving skills.<br />
+              • Built a beautiful weather web app and personal portfolio with
+              EmailJS/Formspree integration.<br />
+              • Contributed to real-time volunteer platforms, building impactful
+              tools used by international teams.
+            </p>
+          </div>
+        </section>
+      </section>
+
+      <hr />
+
+      <section class="he">
+        <h1 class="h1">
+          <i class="fa-solid fa-graduation-cap"></i> Education
+        </h1>
+        <div class="firstSection">
+          <!-- <div class="leftSection">
+            <img src="assests/nit_affan.jpg" />
+          </div> -->
+          <div class="rightSection">
+            <form class="colbox">
+              <h1><i class="fa-solid fa-graduation-cap"></i> Education</h1>
+              <br />
+              <h2>Singapore Management University - Singapore, Singapore</h2>
+              <br />
+              <h3>Bachelor's Degree in Computer Science </h3>
+              <br />
+              <!-- <h3>CGPA: 8.15 (till 7th semester)</h3> -->
+              <h5>September 2014 - June 2018</h5>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <hr />
+      <section class="thirdSection">
+        <h1 class="h1"><i class="fa-brands fa-superpowers"></i> Strengths</h1>
+
+        <div class="strength">
+          <div>
+            <img src="assests/webdev.png" />
+            <p>Development Enthusiasts</p>
+          </div>
+          <div>
+            <img src="assests/Fast.png" />
+            <p>Fast Project Production</p>
+          </div>
+          <div>
+            <img src="assests/learner.png" />
+            <p>Quick Learner</p>
+          </div>
+          <div>
+            <img src="assests/loyal.png" />
+            <p>Loyal & Trustworthy</p>
+          </div>
+          <div>
+            <img src="assests/comm.png" />
+            <p>Excellent Communication</p>
+          </div>
+          <div>
+            <img src="assests/colllll.png" />
+            <p>Collaborative</p>
+          </div>
+        </div>
+      </section>
+      <hr />
+
+      <section class="portfolio-section">
+        <div class="portfolio-video-container">
+          <div class="portfolio-floating-shapes">
+            <div class="portfolio-shape"></div>
+            <div class="portfolio-shape"></div>
+            <div class="portfolio-shape"></div>
+            <div class="portfolio-shape"></div>
+          </div>
+          <div class="portfolio-video-wrapper">
+            <!-- Video element with controls -->
+            <video class="portfolio-video" autoplay muted loop>
+              <!-- Replace these source files with your actual video files -->
+              <source
+                src="assests/ProVideo/appreciation.mp4"
+                type="video/mp4"
+              />
+              <source src="#" type="video/webm" />
+              Your browser does not support the video tag.
+            </video>
+            <div class="portfolio-video-gradient"></div>
+          </div>
+        </div>
+        <div class="portfolio-content-container">
+          <div class="portfolio-message-container">
+            <h2 class="portfolio-heading">
+              Why Choose <span class="portfolio-highlight">Me</span>?
+            </h2>
+            <p class="portfolio-paragraph">
+              Thank you for considering my portfolio. I'm confident that my
+              skills, experience, and dedication make me an
+              <span class="portfolio-highlight">exceptional asset</span> to your
+              organization.
+            </p>
+            <p class="portfolio-paragraph">
+              By bringing me on board, you'll gain a committed professional who
+              delivers:
+            </p>
+            <ul class="portfolio-list">
+              <li class="portfolio-list-item">
+                <strong>Innovative solutions</strong> that drive real results
+              </li>
+              <li class="portfolio-list-item">
+                <strong>Dedicated work ethic</strong> with attention to detail
+              </li>
+              <li class="portfolio-list-item">
+                <strong>Collaborative spirit</strong> that strengthens team
+                dynamics
+              </li>
+              <li class="portfolio-list-item">
+                <strong>Adaptability</strong> to meet changing project needs
+              </li>
+            </ul>
+            <p class="portfolio-paragraph">
+              I'm seeking to create meaningful impact and value for your
+              business. Let's work together to achieve extraordinary results.
+            </p>
+            <p class="portfolio-signature">— IsaiasMoney</p>
+          </div>
+        </div>
+      </section>
+
+      <hr />
+    </main>
+
+    <!----------------- visitor Panel -------------->
+    <section>
+      <div class="visitor-panel">
+        <div class="visitor">
+          <h1>Total Visitor</h1>
+          <a href="https://www.freecounterstat.com" title="website counter"
+            ><img
+              src="https://counter4.optistats.ovh/private/freecounterstat.php?c=ncfgpt8dm1e2hadq14wrysdmd3g1sa9l"
+              border="0"
+              title="website counter"
+              alt="website counter"
+          /></a>
+        </div>
+      </div>
+      <br />
+      <br />
+    </section>
+
+    <!-- SLIDE TO TOP -->
+    <button id="scrollToTop" class="fixed-btn scroll-top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+
+    <!-- AI Assistant Button -->
+    <!-- <section id="robosection">
+      <a
+        href="https://cdn.botpress.cloud/webchat/v2.2/shareable.html?configUrl=https://files.bpcontent.cloud/2025/03/28/10/20250328101125-DL40H6OI.json"
+        class="fixed-btn ai-robo"
+      >
+        <button class="ai-robo-btn">
+          💬 Chat
+        </button>
+      </a>
+    </section> -->
+
+    <!------------------- footer ------------------->
+    <footer>
+      <div class="footer">
+        <div class="footer-container">
+          <!-- Branding Section with Social Media Links -->
+          <div class="footer-section footer-brand">
+            <h3>Isaias's Developer Portfolio</h3>
+            <p>Turning ideas into reality, one line of code at a time.</p>
+            <div class="footer-social">
+              <ul>
+                <li>
+                  <a
+                    href="https://www.instagram.com/"
+                    target="_blank"
+                    ><i class="fa-brands fa-instagram"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://github.com/IsaiasMoney" target="_blank"
+                    ><i class="fa-brands fa-github"></i
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.youtube.com"
+                    target="_blank"
+                    ><i class="fa-brands fa-youtube"></i
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/in"
+                    target="_blank"
+                    ><i class="fa-brands fa-linkedin"></i
+                  ></a>
+                </li>
+                <li>
+                  <a
+                    href="https://www.hackerrank.com/profile"
+                    target="_blank"
+                    ><i class="fa-brands fa-hackerrank"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://discord.com/channels/" target="_blank"
+                    ><i class="fa-brands fa-discord"></i
+                  ></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Quick Links Section -->
+          <div class="footer-section footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+              <li>
+                <a href="index.html"><i class="fa fa-home"></i> Home</a>
+              </li>
+              <li>
+                <a href="services.html"><i class="fa fa-cogs"></i> Services</a>
+              </li>
+              <li>
+                <a href="projects.html"
+                  ><i class="fa fa-briefcase"></i> Projects</a
+                >
+              </li>
+              <li>
+                <a href="about.html"><i class="fa fa-user"></i> About</a>
+              </li>
+              <li>
+                <a href="contact.html"
+                  ><i class="fa fa-envelope"></i> Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Contact Information Section -->
+          <div class="footer-section footer-contact">
+            <h4>Contact</h4>
+            <p><i class="fa fa-phone"></i> 323 813 4055</p>
+            <p><i class="fa fa-envelope"></i> IsaiasMoney20251@outlook.com</p>
+            <p>
+              <i class="fa fa-map-marker"></i> Kolkata, West Bengal, India
+            </p>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>Copyright &copy; 2025 Isaiasportfolio.com | All rights reserved</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script>
+      var typed = new Typed("#element", {
+        strings: [
+          "Full Stack Web Developer",
+          "Programmer",
+          "Responsive Web Designer",
+          "UI/UX Developer",
+        ],
+        typeSpeed: 50,
+        backSpeed: 50,
+        loop: true,
+      });
+    </script>
+    <script src="app.js"></script>
+  </body>
+</html>

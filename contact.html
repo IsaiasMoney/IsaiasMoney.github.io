@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Isaias - Developer Portfolio</title>
+  <link rel="stylesheet" href="style.css" class="rel" />
+  <link rel="icon" href="assests/icon.png" class="rel" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" class="rel" />
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.css" rel="stylesheet" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.14.1/mapbox-gl.js"></script>
+  <!-- <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script> -->
+  <script type="text/javascript">
+    (function() {
+      emailjs.init("n0FFVmEY1sXoWQix3"); // Replace 'YOUR_USER_ID' with your actual user ID from EmailJS.
+    })();
+  </script>
+
+  <style>
+    #map {
+      height: 460px;
+      width: 70%;
+      border: 4px solid rgb(130, 127, 127);
+      border-style: ridge;
+      border-radius: 14px;
+      margin-bottom: 50px;
+      position: relative;
+      left: 50%;
+      transform: translate(-50%, -2%);
+    }
+  </style>
+</head>
+
+<body>
+  <!-- <div id="preloader"></div> -->
+  <header>
+    <nav class="navbar">
+      <div class="namelogo">
+        <img src="assests/affan1.jpg">
+      <div class="left">&nbsp;Isaias's Portfolio</div>
+      </div>
+      <div class="right">
+        <ul class="navbar-menu">
+          <li><a href="index.html">Home</a></li>
+          <li>
+            <a href="services.html">Services</a>
+          </li>
+          <li><a href="projects.html">Projects</a></li>
+          <!-- <li><a href="about.html">About</a></li> -->
+          <li><a href="contact.html">Contact Me</a></li>
+        </ul>
+      </div>
+      <div class="navbar-toggle">
+        <button id="menu-toggle"><i class="fa-solid fa-list"></i></button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="firstSection">
+      <div class="leftSection">
+        <img src="assests/affan.jpg" style="height: 320px" />
+      </div>
+      <div class="rightSection" id="rs">
+        <form>
+          <h1>Contact</h1>
+          <h3><i>Isaias Money</i></h3>
+          <h3><i class="fa-solid fa-mobile"></i> Mobile: 323 813 4055</h3>
+          <h3>
+            <i class="fa-regular fa-envelope"></i> Email:
+            IsaiasMoney20251@outlook.com
+          </h3>
+          <!-- <h3>
+              <i class="fa-regular fa-envelope"></i> Alternate Email:
+              mdaffanasghar15@gmail.com
+            </h3> -->
+          <hr id="hr" />
+          <h2>Address</h2>
+          <h3>
+            <i class="fa-regular fa-address-book"></i> Toronto, Canada
+          </h3>
+          <br />
+          <h2><i class="fa-regular fa-message"></i> Message Me</h2>
+          <h3 class="insta">
+            <!-- <button>
+              <a href="https://www.instagram.com/mr_affan15/">@mr_affan15</a>
+            </button> -->
+          </h3>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <section>
+    <h1 style="text-align: center;">
+      &nbsp;<i class="fa-solid fa-house-flag"></i> My Home Town Map :
+    </h1>
+    <div style="height: 30px"></div>
+    <div id="map"></div>
+    <script>
+      mapboxgl.accessToken =
+        "pk.eyJ1IjoibWRhZmZhbmFzZ2hhciIsImEiOiJjbG80ZDl3Y3kwMTExMmlxZHd2NmFyN2R5In0.CFJ5SZdaJzFujJnLaK1gUQ";
+      const map = new mapboxgl.Map({
+        container: "map", // container ID
+        // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+        style: "mapbox://styles/mapbox/streets-v12", // style URL
+        center: [43.651070, 79.347015], // starting position [lng, lat]
+        zoom: 7, // starting zoom
+      });
+      const marker2 = new mapboxgl.Marker({
+          color: "red"
+        })
+        .setLngLat([43.651070, 79.347015])
+        .addTo(map);
+      // Add a scale control to the map
+      map.addControl(new mapboxgl.ScaleControl());
+      // Add zoom and rotation controls to the map.
+      map.addControl(new mapboxgl.NavigationControl());
+
+      // const popup = new mapboxgl.Popup({ closeOnClick: false })
+      //   .setLngLat([88.401445, 22.865637])
+      //   .setHTML("<h2>My sweet house</h2>")
+      //   .addTo(map);
+
+      // const size = 200;
+
+      // // This implements `StyleImageInterface`
+      // // to draw a pulsing dot icon on the map.
+      // const pulsingDot = {
+      //   width: size,
+      //   height: size,
+      //   data: new Uint8Array(size * size * 4),
+
+      //   // When the layer is added to the map,
+      //   // get the rendering context for the map canvas.
+      //   onAdd: function () {
+      //     const canvas = document.createElement("canvas");
+      //     canvas.width = this.width;
+      //     canvas.height = this.height;
+      //     this.context = canvas.getContext("2d");
+      //   },
+
+      //   // Call once before every frame where the icon will be used.
+      //   render: function () {
+      //     const duration = 1000;
+      //     const t = (performance.now() % duration) / duration;
+
+      //     const radius = (size / 2) * 0.3;
+      //     const outerRadius = (size / 2) * 0.7 * t + radius;
+      //     const context = this.context;
+
+      //     // Draw the outer circle.
+      //     context.clearRect(0, 0, this.width, this.height);
+      //     context.beginPath();
+      //     context.arc(
+      //       this.width / 2,
+      //       this.height / 2,
+      //       outerRadius,
+      //       0,
+      //       Math.PI * 2
+      //     );
+      //     context.fillStyle = `rgba(255, 200, 200, ${1 - t})`;
+      //     context.fill();
+
+      //     // Draw the inner circle.
+      //     context.beginPath();
+      //     context.arc(
+      //       this.width / 2,
+      //       this.height / 2,
+      //       radius,
+      //       0,
+      //       Math.PI * 2
+      //     );
+      //     context.fillStyle = "rgba(255, 100, 100, 1)";
+      //     context.strokeStyle = "white";
+      //     context.lineWidth = 2 + 4 * (1 - t);
+      //     context.fill();
+      //     context.stroke();
+
+      //     // Update this image's data with data from the canvas.
+      //     this.data = context.getImageData(
+      //       0,
+      //       0,
+      //       this.width,
+      //       this.height
+      //     ).data;
+
+      //     // Continuously repaint the map, resulting
+      //     // in the smooth animation of the dot.
+      //     map.triggerRepaint();
+
+      //     // Return `true` to let the map know that the image was updated.
+      //     return true;
+      //   },
+      // };
+
+      // map.on("load", () => {
+      //   map.addImage("pulsing-dot", pulsingDot, { pixelRatio: 2 });
+
+      //   map.addSource("dot-point", {
+      //     type: "geojson",
+      //     data: {
+      //       type: "FeatureCollection",
+      //       features: [
+      //         {
+      //           type: "Feature",
+      //           geometry: {
+      //             type: "Point",
+      //             coordinates: [88.401445, 22.865637], // icon position [lng, lat]
+      //           },
+      //         },
+      //       ],
+      //     },
+      //   });
+      //   map.addLayer({
+      //     id: "layer-with-pulsing-dot",
+      //     type: "symbol",
+      //     source: "dot-point",
+      //     layout: {
+      //       "icon-image": "pulsing-dot",
+      //     },
+      //   });
+      // });
+    </script>
+  </section>
+
+  <section>
+    <div class="contact-form">
+      <img src="assests/affan1.jpg">
+      <form action="https://formspree.io/f/xpwaywop" method="POST">
+        <h2>Contact Me</h2>
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" placeholder="Azim premji" required>
+
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="_replyto" placeholder="azimpremji@gmail.com" required>
+
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" required></textarea>
+
+          <button type="submit">Send</button>
+        </div>
+      </form>
+      <!-- <form action="https://formspree.io/f/xpwaywop" method="POST" >
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Azim Premji" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" name="_replyto" placeholder="azimpremji@gmail.com" required>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+        </div>
+        <div class="form-group">
+          <button type="submit">Send Message</button>
+        </div>
+      </form> -->
+    </div>
+  </section>
+
+  <!-- SLIDE TO TOP -->
+  <button id="scrollToTop" class="fixed-btn scroll-top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Chatbot Button -->
+  <section id="chatbotContainer">
+    <div class="chatbot-icon" onclick="toggleChatbot()">💬</div>
+
+    <!-- Chatbot Container -->
+    <div class="chatbot-container">
+      <div class="chatbot-header">
+        Chatbot
+        <span class="close-btn" onclick="toggleChatbot()">×</span>
+      </div>
+      <div class="chatbot-messages" id="chatbotMessages">
+        <div class="bot-message">Hello! How can I help you? 😊</div>
+      </div>
+      <div class="chatbot-input">
+        <input
+          type="text"
+          id="userInput"
+          placeholder="Type a message..."
+          onkeypress="handleKeyPress(event)"
+        />
+        <button onclick="sendMessage()">➤</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer">
+      <div class="footer-container">
+        <!-- Branding Section with Social Media Links -->
+        <div class="footer-section footer-brand">
+          <h3>Isaias's Developer Portfolio</h3>
+          <p>Turning ideas into reality, one line of code at a time.</p>
+          <div class="footer-social">
+            <ul>
+              <!-- <li><a href="https://www.instagram.com/mr_affan15/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li> -->
+              <li><a href="https://https://github.com/IsaiasMoney" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+              <!-- <li><a href="https://www.youtube.com/@mr_affan15/featured" target="_blank"><i class="fa-brands fa-youtube"></i></a></li> -->
+              <li><a href="https://www.linkedin.com/in/mdaffanasghar/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+              <li><a href="https://www.hackerrank.com/profile/mdaffancoder" target="_blank"><i class="fa-brands fa-hackerrank"></i></a></li>
+              <!-- <li><a href="https://discord.com/channels/@me" target="_blank"><i class="fa-brands fa-discord"></i></a></li> -->
+            </ul>
+          </div>
+        </div>
+
+        <!-- Quick Links Section -->
+        <div class="footer-section footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="services.html"><i class="fa fa-cogs"></i> Services</a></li>
+            <li><a href="projects.html"><i class="fa fa-briefcase"></i> Projects</a></li>
+            <li><a href="about.html"><i class="fa fa-user"></i> About</a></li>
+            <li><a href="contact.html"><i class="fa fa-envelope"></i> Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Information Section -->
+        <div class="footer-section footer-contact">
+          <h4>Contact</h4>
+          <p><i class="fa fa-phone"></i> 323 813 4055</p>
+          <p><i class="fa fa-envelope"></i> IsaiasMoney20251@outlook.com</p>
+          <p><i class="fa fa-map-marker"></i> Toronto, Canada</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright &copy; Isaiasportfolio.com | All rights reserved</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+
+  <!-- email js script start -->
+  <script type="text/javascript">
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the default form submission
+
+      // Collect form data
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
+
+      // Send email using EmailJS
+      emailjs.send('service_7tg65sw', 'template_4lwxe9q', {
+          from_name: name,
+          from_email: email,
+          message: message
+        })
+        .then(function(response) {
+          console.log('SUCCESS!', response.status, response.text);
+          alert('Your message has been sent!');
+        }, function(error) {
+          console.log('FAILED...', error);
+          alert('Oops... Something went wrong.');
+        });
+    });
+  </script>
+  <!-- email js script end -->
+
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>

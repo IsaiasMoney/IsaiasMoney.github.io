@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Isaias - Developer Portfolio</title>
+  <link rel="icon" href="assests/icon.png" class="rel" />
+  <link rel="stylesheet" href="style.css" class="rel" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" class="rel" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+</head>
+
+<body>
+  <!-- <div id="preloader"></div>  -->
+  <header>
+    <nav class="navbar">
+      <div class="namelogo">
+        <img src="assests/affan1.jpg">
+      <div class="left">&nbsp;Isaias's Portfolio</div>
+      </div>
+      <div class="right">
+        <ul class="navbar-menu">
+          <li><a href="index.html">Home</a></li>
+          <li>
+            <a href="services.html">Services</a>
+          </li>
+          <li><a href="projects.html">Projects</a></li>
+          <!-- <li><a href="about.html">About</a></li> -->
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="navbar-toggle">
+        <button id="menu-toggle"><i class="fa-solid fa-list"></i></button>
+      </div>
+    </nav>
+  </header>
+
+  <main id="ServiceBody">
+    <section>
+      <h4 class="service-heading" style="color: #a6a1a1">
+        What i can do for you
+      </h4>
+      <h1 class="service-heading">Services</h1>
+
+      <div class="service-container">
+        <div id="service-card">
+          <img src="assests/webdev.png" />
+          <h3>Web Development</h3>
+          <p>
+            I can make Full-Stack Web Development projects with responsive
+            web design & i have expertise in Front-end web Development
+            specially building beautiful user interface
+          </p>
+        </div>
+
+        <div id="service-card">
+          <img src="assests/dm.png" />
+          <h3>Database Management</h3>
+          <p>
+            Designing and managing databases using MongoDB, MySQL, or other database systems and Implementing CRUD operations and ensuring data integrity and security.
+          </p>
+        </div>
+
+        <div id="service-card">
+          <img src="assests/deploy.png" />
+          <h3>Deployment Service</h3>
+          <p>
+            Easily deploy your website with our all-in-one service! Get fast, secure, and scalable hosting solutions. Whether you're launching a personal blog, an e-commerce site, or a full-scale web application
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SLIDE TO TOP -->
+  <button id="scrollToTop" class="fixed-btn scroll-top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <!-- Chatbot Button -->
+  <section id="chatbotContainer">
+    <div class="chatbot-icon" onclick="toggleChatbot()">💬</div>
+
+    <!-- Chatbot Container -->
+    <div class="chatbot-container">
+      <div class="chatbot-header">
+        Chatbot
+        <span class="close-btn" onclick="toggleChatbot()">×</span>
+      </div>
+      <div class="chatbot-messages" id="chatbotMessages">
+        <div class="bot-message">Hello! How can I help you? 😊</div>
+      </div>
+      <div class="chatbot-input">
+        <input
+          type="text"
+          id="userInput"
+          placeholder="Type a message..."
+          onkeypress="handleKeyPress(event)"
+        />
+        <button onclick="sendMessage()">➤</button>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer">
+      <div class="footer-container">
+        <!-- Branding Section with Social Media Links -->
+        <div class="footer-section footer-brand">
+          <h3>Isaias's Developer Portfolio</h3>
+          <p>Turning ideas into reality, one line of code at a time.</p>
+          <div class="footer-social">
+            <ul>
+              <li><a href="https://www.instagram.com" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+              <li><a href="https://github.com/IsaiasMoney" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+              <li><a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
+              <li><a href="https://www.linkedin.com/in/" target="_blank"><i class="fa-brands fa-linkedin"></i></a></li>
+              <li><a href="https://www.hackerrank.com/profile" target="_blank"><i class="fa-brands fa-hackerrank"></i></a></li>
+              <li><a href="https://discord.com/channels" target="_blank"><i class="fa-brands fa-discord"></i></a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Quick Links Section -->
+        <div class="footer-section footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html"><i class="fa fa-home"></i> Home</a></li>
+            <li><a href="services.html"><i class="fa fa-cogs"></i> Services</a></li>
+            <li><a href="projects.html"><i class="fa fa-briefcase"></i> Projects</a></li>
+            <li><a href="about.html"><i class="fa fa-user"></i> About</a></li>
+            <li><a href="contact.html"><i class="fa fa-envelope"></i> Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Information Section -->
+        <div class="footer-section footer-contact">
+          <h4>Contact</h4>
+          <p><i class="fa fa-phone"></i> 323 813 4055</p>
+          <p><i class="fa fa-envelope"></i> IsaiasMoney20251@outlook.com</p>
+          <p><i class="fa fa-map-marker"></i> Toronto, Canada</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright &copy; Isaiasportfolio.com | All rights reserved</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+  <script src="app.js"></script>
+</body>
+
+</html>
